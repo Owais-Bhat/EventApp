@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch("http://192.168.43.155:5000/events"); // Ensure your server is running here
+        const response = await fetch("http://192.168.43.155:5000/events");
         const data = await response.json();
         setEvents(data);
       } catch (error) {
@@ -86,7 +86,6 @@ const EventCard = ({ event, onPress }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.cardContainer}>
       <Card style={styles.card}>
-        {/* Use the first image URL from the images array */}
         <Card.Cover
           style={{ height: 200, resizeMode: "contain" }}
           source={{ uri: event.images }}

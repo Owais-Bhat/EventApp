@@ -15,7 +15,6 @@ const BookingScreen = ({ navigation }) => {
   };
 
   const handleBooking = async () => {
-    // Basic validation
     if (!name || !email || !eventId) {
       Alert.alert("Validation Error", "All fields are required.");
       return;
@@ -37,7 +36,6 @@ const BookingScreen = ({ navigation }) => {
 
     const newBooking = { name, email, eventId };
 
-    // Save the booking to AsyncStorage
     const storedBookings = await AsyncStorage.getItem("bookings");
     const bookings = storedBookings ? JSON.parse(storedBookings) : [];
     bookings.push(newBooking);
@@ -77,7 +75,7 @@ const BookingScreen = ({ navigation }) => {
           mode="outlined"
           value={eventId}
           onChangeText={setEventId}
-          keyboardType="numeric" // Ensures only numbers are input
+          keyboardType="numeric"
           style={styles.input}
         />
         <Button mode="contained" onPress={handleBooking} style={styles.button}>

@@ -17,16 +17,13 @@ const EventDetailScreen = ({ route, navigation }) => {
   return (
     <GradientBackground>
       <View style={styles.container}>
-        {/* Display only the first image of the event */}
         <Image source={{ uri: event.images }} style={styles.image} />
 
-        {/* Event details */}
         <Text style={styles.title}>{event.title}</Text>
         <Text style={styles.date}>{event.date}</Text>
         <Text style={styles.location}>{event.location}</Text>
         <Text style={styles.description}>{event.description}</Text>
 
-        {/* Button to book the event */}
         <Button
           title="Book Now"
           onPress={() => navigation.navigate("Booking", { event })}
@@ -44,7 +41,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   image: {
-    width: viewportWidth * 0.9, // Adjust to 90% of viewport width
+    width: viewportWidth * 0.9,
     height: 250,
     borderRadius: 10,
     marginBottom: 20,
