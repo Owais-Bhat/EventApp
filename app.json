@@ -22,6 +22,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "scheme": "BookEvent",
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#000000"
     }
+    
+      
+    
   }
 }
